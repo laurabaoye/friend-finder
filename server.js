@@ -5,14 +5,14 @@ const PORT = process.env.PORT || 3000;
 //middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static("./app/public"));
+app.use(express.static("./public"));
 
 //apiroute
-const apiRoutes = require("./app/routing/apiRoutes.js");
+const apiRoutes = require("./routes/apiroutes");
 app.use("/", apiRoutes);
 
 //clientroute
-const htmlRoutes = require("./app/routing/htmlRoutes.js");
+const htmlRoutes = require("./routes/htmlroutes");
 app.use("/", htmlRoutes);
 
 //listening to port
